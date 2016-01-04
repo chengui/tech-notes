@@ -139,12 +139,26 @@ GitHub uses "GitHub Flavoured Markdown", or GFM. Comparing with Markdown Basic, 
 
 ### Emphasis ###
 
+Where standard Markdown transforms underscores (_) into italics, GFM ignores 
+underscores in words.
+
+GFM uses double tildes (~) to create strikethrough text, this is not availabe
+in standard Markdown.
+
+And GFM also supoorts URL autolinking, which allows you simply entering a URL
+to be turned into a link directly.
+
     > do_this_and_do_that
 
     ~~strikethrough text~~
 
+    http://example.com
+
 ### Fenced code blocks ###
 
+Besides converting text with four spaces at the beginning of each line into a
+code block like standard Markdown, GFM also supports wrapping your code in ` ``` ` to create fenced code blocks. But it's recommended to place a blank line before them.
+  
     ```
     function test() {
         echo "notice the blank line before this function"
@@ -153,18 +167,27 @@ GitHub uses "GitHub Flavoured Markdown", or GFM. Comparing with Markdown Basic, 
 
 ### Syntax hightlighting ###
 
+More further, GFM supports adding an optional language identifier in fenced code block to syntax hightlight the code. [Linguist] is used to perform language detection and syntax highlighting.
+
     ```ruby
     require 'redcarpet'
     markdown = Redcarpet.new("Hello World!")
     puts markdown.to_html
     ```
+[linguist]: https://github.com/github/linguist
 
 ### Task Lists ###
+
+GFM allows you to create a handy progress indicator like this:
 
     - [x] @mentions, #refs, [links](), **formatting**
     - [] this is an incomplete item
 
 ### Tables ###
+
+GFM supports pipe-style tables, which allows you to create tables by separating each column with a pipe `|`, and the table header may be the first  row dividing other rows with hypens `-`.
+
+And the colons within the header row indicate column alignment: a colon on the left-most side indicates a left-aligned column; a right-most one indicates a right-aligned column; a colon on both sides indicates a center-aligned column.
 
     fruit| price
     -----|-----:
@@ -174,9 +197,13 @@ GitHub uses "GitHub Flavoured Markdown", or GFM. Comparing with Markdown Basic, 
 
 ### Emoji ###
 
+GFM also suports emoji, to see the full list it supports, check out the [Emoji Cheat Sheet](http://www.emoji-cheat-sheet.com/).
+
     emoji!: :smile: :sparkles: :camel: :boom:
 
 ### Miscellaneous ###
+
+TODO:
 
 ## PHP Markdown Extra ###
 
