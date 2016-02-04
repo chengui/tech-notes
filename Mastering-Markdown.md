@@ -209,6 +209,8 @@ TODO:
 
 ### Inside HTML ###
 
+Markdown Extra allows you to put Markdown-formatted text content inside any block-level tag, by adding a *markdown* attribute to the tag which gives `markdown="1"`.
+
     <div markdown="1">
     This is *true* markdown text.
     </div>
